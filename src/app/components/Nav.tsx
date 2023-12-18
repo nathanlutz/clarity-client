@@ -12,14 +12,11 @@ export default function Nav() {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
-            Home
-          </a>
+          <Link href="/" className="p-3">Home</Link>
+          <Link href="/dashboard" className="p-3">Dashboard </Link>
         </div>
-        <>
-          {isLoaded && user ? <Link href="/dashboard">Dashboard </Link> : <Link href="/sign-up">Sign Up/In</Link>}
+          {isLoaded && !user && <Link href="/sign-up">Sign Up/In</Link>}
           <UserButton afterSignOutUrl="/" />
-        </>
       </nav>
     </header>
   );
