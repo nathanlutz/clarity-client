@@ -14,9 +14,11 @@ export default function Nav() {
         <div className="flex lg:flex-1">
           <Link href="/" className="p-3">Home</Link>
           <Link href="/dashboard" className="p-3">Dashboard </Link>
-        </div>
-          {isLoaded && !user && <Link href="/sign-up">Sign Up/In</Link>}
+        </div >
+        <div className="flex">
+          {isLoaded && !user && <Link href="/sign-up" >Sign Up/In</Link>}
           <UserButton afterSignOutUrl="/" />
+        </div>
       </nav>
     </header>
   );
