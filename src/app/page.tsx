@@ -4,9 +4,7 @@ import { redirect } from "next/navigation";
 
 export default function Home() {
   const { userId } = auth();
-  if (userId) {
-    redirect("/dashboard");
-  }
+  console.log(userId);
   return (
     <main className="">
       <h1>clarity markets</h1>

@@ -1,7 +1,7 @@
 import { authMiddleware }    from "@clerk/nextjs";
 
 export default authMiddleware({
-  publicRoutes: ["/"],
+  publicRoutes: ["/", "/dashboard"],
   authorizedParties: [
     "http://localhost:3000",
     "https://clarity-client-nathanlutzs-projects.vercel.app",
