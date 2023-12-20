@@ -1,10 +1,12 @@
 "use client";
 import { UserButton, useUser } from "@clerk/nextjs";
 import Link from "next/link";
-import React from "react";
-
+import { usePathname } from "next/navigation";
+import React, { useEffect, useState } from "react";
 export default function Nav() {
   const { user, isLoaded } = useUser();
+  const pathname = usePathname();
+  console.log("path!!!:"+pathname);
   return (
     <header>
       <nav
@@ -12,9 +14,9 @@ export default function Nav() {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <Link href="/" className="p-3">Home</Link>
-          <Link href="/dashboard" className="p-3">Dashboard </Link>
-          <Link href="/feed" className="p-3">Feed </Link>
+          <Link href="/" className={"p-3 underline" + (pathname === "/" ?" active" : "")}>Home</Link>
+          <Link href="/dashboard" className={"p-3 underline" + (pathname === "/dashboard" ?" active" : "")}>Dashboard </Link>
+          <Link href="/feed" className={"p-3 underline" + (pathname === "/feed" ?" active" : "")} >Feed </Link>
         </div >
         <div className="flex">
           {isLoaded && !user && <Link href="/sign-up" >Sign Up/In</Link>}
