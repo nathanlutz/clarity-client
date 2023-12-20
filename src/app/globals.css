@@ -27,9 +27,17 @@ body {
 }
 
 nav {
+  a {
+    border: 1px #282c3400 solid;
+    padding: 5px;
+    margin: 5px;
+  }
+
   a.active {
     border: 1px solid #fff;
+    background: rgb(32, 32, 32);
   }
+
 
   a {
     border-radius: 7.5px;
@@ -37,8 +45,7 @@ nav {
     padding: 10px;
     text-decoration: none;
   }
-
-  a:hover {
+  a:hover:not(.active) {
     background: #ffffff11;
     transition: background .4s;
   }
