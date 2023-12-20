@@ -14,9 +14,9 @@ export default function Nav() {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <Link href="/" className={"p-3 underline" + (pathname === "/" ?" active" : "")}>Home</Link>
-          <Link href="/dashboard" className={"p-3 underline" + (pathname === "/dashboard" ?" active" : "")}>Dashboard </Link>
-          <Link href="/feed" className={"p-3 underline" + (pathname === "/feed" ?" active" : "")} >Feed </Link>
+          <Link href="/" className={"p-3 " + (pathname === "/" ? " active" : "")}>Home</Link>
+          <Link href="/dashboard" className={"p-3 " + (pathname === "/dashboard" ? " active" : "")}>Dashboard </Link>
+          <Link href="/feed" className={"p-3 " + (pathname === "/feed" ? " active" : "")} >Feed </Link>
         </div >
         <div className="flex">
           {isLoaded && !user && <Link href="/sign-up" >Sign Up/In</Link>}

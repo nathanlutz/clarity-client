@@ -25,3 +25,21 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+nav {
+  a.active {
+    border: 1px solid #fff;
+  }
+
+  a {
+    border-radius: 7.5px;
+    color: #61dafb;
+    padding: 10px;
+    text-decoration: none;
+  }
+
+  a:hover {
+    background: #ffffff11;
+    transition: background .4s;
+  }
+}
