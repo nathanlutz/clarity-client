@@ -1,6 +1,16 @@
 import { auth } from '@clerk/nextjs';
 import React from 'react';
-const mockFeedData = {
+
+"use strict";
+type FeedDataItem = { 
+  shortTitle: string;
+  currentAvg: number;
+  complete: boolean;
+  ticker: string;
+  responses: number;
+  questionId: string;
+}
+const feedData = {
   questionListMRU: [
     {
       shortTitle: "AAPL Q4 2023 Earnings",
@@ -21,7 +31,7 @@ const mockFeedData = {
     {
       shortTitle: "GOOGL Q4 2023 Earnings",
       currentAvg: 100.0,
-      complete: false,
+      complete: true,
       ticker: "GOOGL",
       responses: 1300,
       questionId: "as4ri9"
@@ -37,9 +47,31 @@ const mockFeedData = {
   ],
 };
 
-export default function FeedPage(){
+export default function FeedPage() {
   const { userId } = auth();
   console.log(userId);
-  console.log(mockFeedData);
-    return <div>Feed</div>;
+  console.log(feedData);
+  return (
+    <>
+      <h1>Feed</h1>
+      <br/>
+      <div>
+        {feedData?.questionListMRU.map((itemData, i) => (
+          <FeedItem key={i} itemData={itemData} />
+        ))}
+      </div>
+    </>
+  );
+}
+interface FeedItemProps {
+  itemData: FeedDataItem;
+}
+
+function FeedItem({ itemData }: FeedItemProps) {
+  console.log(itemData);
+  return (
+    <div>
+      <h1>test {itemData?.shortTitle}</h1>
+    </div>
+  );
 }
