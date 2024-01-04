@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 export default function Nav() {
   const { user, isLoaded } = useUser();
   const pathname = usePathname();
-  console.log("path!!!:"+pathname);
+  console.log("path: "+pathname);
   return (
     <header>
       <nav
