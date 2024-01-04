@@ -10,6 +10,8 @@ export default authMiddleware({
     "https://clarity-client-git-master-nathanlutzs-projects.vercel.app/",
     "https://clarity-client-2idwcleac-nathanlutzs-projects.vercel.app",
     "https://clarity-client-2idwcleac-nathanlutzs-projects.vercel.app/",
+    "https://www.clarity-markets.com/",
+    "https://www.clarity-markets.com"
   ],
 });
 
